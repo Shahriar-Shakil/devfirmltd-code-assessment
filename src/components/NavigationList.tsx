@@ -4,6 +4,7 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 type Props = {
   navigation: NavigationItem[];
@@ -11,6 +12,7 @@ type Props = {
 };
 
 export default function NavigationList({ navigation, submenu }: Props) {
+  const pathname = usePathname();
   return (
     <ul role="list" className="space-y-2">
       {navigation.map((item, index) => (
@@ -88,7 +90,7 @@ export default function NavigationList({ navigation, submenu }: Props) {
                   <Link
                     href={item.href}
                     className={classNames(
-                      item.current
+                      item.href === pathname
                         ? "bg-slate-100/40 text-white"
                         : "text-white/70 hover:text-white hover:bg-slate-100/40",
                       "group flex gap-x-3  text-base leading-6 font-medium py-[23.5px] px-8  items-center transition-all rounded-l-full"
