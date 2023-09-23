@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .badge {
+    @apply absolute inline-flex items-center justify-center text-xs text-white font-bold border-2 rounded-full top-0 right-0 w-6 h-6;
+  }
+  .badge-primary {
+    @apply badge bg-[#72add7] shadow-primaryTransparent;
+  }
+  .badge-warn {
+    @apply badge bg-[#F8BB54] shadow-warn;
+  }
+  .data-table {
+  }
+  .data-table .ant-table-thead .ant-table-cell {
+    @apply py-5  bg-white border border-x-0 rounded-none border-[#E7ECF3] before:content-none !important;
+  }
+  .data-table .ant-table-tbody .ant-table-cell {
+    @apply border-none  !important;
+  }
+}
+@layer utilities {
+  .placeholder-style::placeholder {
+    padding: 5px 12px;
+    margin: 5px;
+  }
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
