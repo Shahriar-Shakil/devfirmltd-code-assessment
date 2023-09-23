@@ -16,6 +16,9 @@ module.exports = {
         primaryTransparent: "0 0 0 2px rgba(114, 173, 215, 0.20);",
         warn: "0 0 0 2px rgba(248, 187, 84, 0.20);",
       },
+      fontFamily: {
+        poppins: ["var(--font-poppins)"],
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],

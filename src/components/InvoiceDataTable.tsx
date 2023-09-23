@@ -1,15 +1,13 @@
 "use client";
 import { InvoiceDataType } from "@/interface/InvoiceDataType";
-import React from "react";
-import { Space, Table, Tag } from "antd";
+import { Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { FaEdit } from "react-icons/fa";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 const data: InvoiceDataType[] = [
   {
     key: "1",
-    invoiceNumber: "I909112",
-    trip: "I909112",
+    invoiceNumber: "1909112",
+    trip: "T909112",
     invoiceDate: "23/08/2022",
     invoiceAmount: "13.500.000",
     balanceDue: "4.500.000",
@@ -19,8 +17,8 @@ const data: InvoiceDataType[] = [
   },
   {
     key: "2",
-    invoiceNumber: "I909113",
-    trip: "I909113",
+    invoiceNumber: "1909113",
+    trip: "T909113",
     invoiceDate: "24/08/2022",
     invoiceAmount: "14.500.000",
     balanceDue: "5.500.000",
@@ -30,8 +28,8 @@ const data: InvoiceDataType[] = [
   },
   {
     key: "3",
-    invoiceNumber: "I909114",
-    trip: "I909114",
+    invoiceNumber: "1909114",
+    trip: "T909114",
     invoiceDate: "25/08/2022",
     invoiceAmount: "12.000.000",
     balanceDue: "3.000.000",
@@ -41,8 +39,8 @@ const data: InvoiceDataType[] = [
   },
   {
     key: "4",
-    invoiceNumber: "I909115",
-    trip: "I909115",
+    invoiceNumber: "1909115",
+    trip: "T909115",
     invoiceDate: "26/08/2022",
     invoiceAmount: "15.000.000",
     balanceDue: "5.000.000",
@@ -52,8 +50,8 @@ const data: InvoiceDataType[] = [
   },
   {
     key: "5",
-    invoiceNumber: "I909116",
-    trip: "I909116",
+    invoiceNumber: "1909116",
+    trip: "T909116",
     invoiceDate: "27/08/2022",
     invoiceAmount: "11.000.000",
     balanceDue: "2.000.000",
@@ -63,8 +61,8 @@ const data: InvoiceDataType[] = [
   },
   {
     key: "6",
-    invoiceNumber: "I909117",
-    trip: "I909117",
+    invoiceNumber: "1909117",
+    trip: "T909117",
     invoiceDate: "28/08/2022",
     invoiceAmount: "16.000.000",
     balanceDue: "6.000.000",
@@ -80,12 +78,14 @@ export default function InvoiceDataTable() {
       dataIndex: "invoiceNumber", // Replace with your actual data key
       key: "invoiceNumber",
       align: "center",
+      sorter: true,
     },
     {
       title: "Trip",
       dataIndex: "trip", // Replace with your actual data key
       key: "trip",
       align: "center",
+      sorter: true,
     },
     {
       title: "Inv. Date",
@@ -135,6 +135,8 @@ export default function InvoiceDataTable() {
       title: "Action",
       key: "action",
       align: "center",
+      sorter: true,
+
       render: (_, record) => (
         <div className="space-x-2 flex  items-center justify-center">
           <button className="bg-primary/20 hover:bg-primary  text-primary hover:text-white p-2 rounded-lg ">
@@ -154,6 +156,7 @@ export default function InvoiceDataTable() {
         columns={columns}
         dataSource={data}
         scroll={{ x: 600 }}
+        pagination={false}
       />
     </div>
   );

@@ -3,7 +3,11 @@ import { Poppins } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
-const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
 
 type Props = {
   params: { id: string };
@@ -22,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={poppins.variable}>
         <NextTopLoader color="#2299DD" height={3} showSpinner={false} />
         <MainLayout>{children}</MainLayout>
       </body>

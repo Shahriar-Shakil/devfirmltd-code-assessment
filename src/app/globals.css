@@ -14,14 +14,24 @@
   }
   .data-table {
   }
+
   .data-table .ant-table-thead .ant-table-cell {
-    @apply py-5  bg-white border border-x-0 rounded-none border-[#E7ECF3] before:content-none !important;
+    @apply py-5  p-3 bg-white border border-x-0 rounded-none border-[#E7ECF3] before:content-none font-poppins text-base font-semibold !important;
   }
   .data-table .ant-table-tbody .ant-table-cell {
-    @apply border-none  !important;
+    @apply border-none text-sm text-[#84878B]  font-medium font-poppins !important;
+  }
+  .data-table .ant-table-thead .ant-table-cell .ant-table-column-sorters {
+    @apply inline-flex  !important;
+  }
+  .ant-table-column-sorter-inner {
+    @apply text-[#3B3E44] !important;
   }
 }
 @layer utilities {
+  body {
+    @apply font-poppins;
+  }
   .placeholder-style::placeholder {
     padding: 5px 12px;
     margin: 5px;
@@ -46,4 +56,11 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+.ant-table-column-sorter-inner {
+  color: #3b3e44 !important;
+}
+.ant-table-column-sorter-up,
+.ant-table-column-sorter-down {
+  font-size: 10px !important;
 }
